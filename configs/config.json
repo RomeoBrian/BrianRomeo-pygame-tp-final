@@ -1,0 +1,387 @@
+{
+    "map_settings": {
+        "tiles_piso": {
+            "0": "./assets/graphics/tiles/ground/piso_medio.png",
+            "1": "./assets/graphics/tiles/ground/piso_arriba_derecha.png",
+            "2": "./assets/graphics/tiles/ground/piso_medio_derecha.png",
+            "3": "./assets/graphics/tiles/ground/piso_abajo_derecha.png",
+            "4": "./assets/graphics/tiles/ground/piso_abajo_medio.png",
+            "5": "./assets/graphics/tiles/ground/piso_abajo_izquierda.png",
+            "6": "./assets/graphics/tiles/ground/piso_medio_izquierda.png",
+            "7": "./assets/graphics/tiles/ground/piso_arriba_izquierda.png",
+            "8": "./assets/graphics/tiles/ground/piso_fondo_medio.png",
+            "q": "./assets/graphics/tiles/ground/piso_invertido_arriba_derecha.png",
+            "e": "./assets/graphics/tiles/ground/piso_invertido_arriba_izquierda.png",
+            "z": "./assets/graphics/tiles/ground/piso_invertido_abajo_izquierda.png",
+            "c": "./assets/graphics/tiles/ground/piso_invertido_abajo_derecha.png"
+        },
+        "tiles_plataforma": {
+            "p": "./assets/graphics/tiles/ground/plataforma_inicio.png",
+            "l": "./assets/graphics/tiles/ground/plataforma_medio.png",
+            "a": "./assets/graphics/tiles/ground/plataforma_fin.png",
+            "t": "./assets/graphics/tiles/ground/plataforma_sola.png"
+        },
+        "tiles_movimiento": {
+            "m": "./assets/graphics/tiles/ground/plataforma_movimiento_izquierda.png",
+            "o": "./assets/graphics/tiles/ground/plataforma_movimiento_medio.png",
+            "v": "./assets/graphics/tiles/ground/plataforma_movimiento_derecha.png"
+        },
+        "tiles_invisibles": {
+            "H": "./assets/graphics/tiles/ground/piso_medio.png",
+            "J": "./assets/graphics/tiles/ground/piso_medio_izquierda.png",
+            "L": "./assets/graphics/tiles/ground/piso_fondo_medio.png",
+            "G": "./assets/graphics/tiles/ground/piso_abajo_medio.png",
+            "b": "boundry",
+            "!": "mensaje en pantalla"
+        },
+        "entidades": {
+            "P": "player",
+            "E": ["summon", "soul"],
+            "T": "./assets/graphics/tiles/ground/trampa.png",
+            "f": "sobrecito",
+            "S": "fish_salto",
+            "B": "boss"
+        }
+    },
+    "ui_settings": {
+        "healt_bar": "./assets/graphics/health_bar/Health_bar.png",
+        "heart": "./assets/graphics/health_bar/Heart_Red_1.png",
+        "barra_vida_topleft": [65, 22],
+        "maximo_ancho_barra": 142,
+        "altura_barra": 12,
+        "sobrecito": "./assets/graphics/sobrecito/animado/sobrecito0.png",
+        "fish_salto": "./assets/graphics/fish_salto/animado/sprite_pez0.png",
+        "topleft_fish": [50, 61],
+        "font": "./assets/fonts/PublicPixel.ttf",
+        "boton": "./assets/graphics/ui/botones/ButtonText_Blue_OnOffBackground.png"
+    },
+    "level_manager_settings": [
+        { "pos": [200, 450], "contenido": "nivel_1", "desbloquea": 1 },
+        { "pos": [650, 250], "contenido": "nivel_2", "desbloquea": 2 },
+        { "pos": [950, 560], "contenido": "nivel_3", "desbloquea": 2 }
+    ],
+    "debug": {
+        "MAP": [
+            "888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888",
+            "88888888q444444444444444444444444444444444444444444444444444444444444444444444444e88888888",
+            "888888882                                                                        688888888",
+            "888888882                                                 b         b            688888888",
+            "888888882                                                 b   E     b            688888888",
+            "888888882                                                 bplllllllab   plllla   688888888",
+            "888888882                       b  b b   b  b      b           plllla    plllla  688888888",
+            "888888882                       bE b b   b  b  E   b                      pla    688888888",
+            "888888882                       bpab bplab  bpllllab                             688888888",
+            "888888882                       pla            plla                  t           688888888",
+            "888888882                     pa                plla          plla               688888888",
+            "888888882                                                                        688888888",
+            "888888882                                                                        688888888",
+            "888888882                                bpab                              bplla 688888888",
+            "888888882             b                  b  b                              b     688888888",
+            "888888882             b  P          E    b  b     E                        b     688888888",
+            "88888888z0001TTTTTTTTT70000000000000000001  70000000000000000000000000000001  700c88888888",
+            "888888888888z000000000c888888888888888888z00c888888888888888888888888888888z00c88888888888"
+        ],
+        "gravedad": 2,
+        "velocidad_mover_mapa": 4,
+        "player": {
+            "frame_rate": 75,
+            "velocidad_animacion": 0.25,
+            "vida": 200,
+            "disparo_cooldown": 300,
+            "speed": 6,
+            "altura_salto": 30,
+            "super_salto": 0,
+            "fuerza": 20
+        },
+        "enemy": {
+            "frame_rate": 200,
+            "velocidad_animacion": 0.25,
+            "velocidad_movimiento": 0.25,
+            "vidas": 50,
+            "disparo_cooldown": 1000,
+            "speed": 2,
+            "fuerza": 5
+        },
+        "sobrecito": {
+            "frame_rate": 200,
+            "velocidad_animacion": 0.25,
+            "path": "assets/graphics/sobrecito/",
+            "recupera": 20
+        }
+
+    },
+    "nivel_1": {
+        "MAP": [
+            "88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888",
+            "8888888888888888888888888888888888888888888888888888888888888888LLLLLLLLLL888888888888888888888888888888888888888",
+            "8888888888888888888888888888888888888888888888888888888888888888LLLLLLLLLL888888888888888888888888888888888888888",
+            "88888888q4444444444444e8q4444444444444444444444444444444e8q44444GG444444GG4444444444444444444444444444e8888888888",
+            "888888882             682                               682             !                             JLL88888888",
+            "888888882 f           682                               682         b                              f  JLL88888888",
+            "888888882plla         682                               682   E f   b      f                       f  68888888888",
+            "888888882    t        682                               543plllllllab   plllla          701moov    f  68888888888",
+            "888888882             682  f       b                b                          moov     682           68888888888",
+            "888888882       plllla682      mov b   E   f      E b                                  t682           68888888888",
+            "888888882             682          plllllllllllllllla                                   682      f    68888888888",
+            "888888882             682 f                                                             682           68888888888",
+            "888888882pllla        543pla                                                            682       t   68888888888",
+            "888888882                                             701                               682           68888888888",
+            "888888882                     t                       682   t                           682plla       68888888888",
+            "888888882      f                  plla  t             682      f                        543           68888888888",
+            "888888882     pa  t                        t          682        t             f                  plla68888888888",
+            "888888882 P t                fff            b     E   682                  b       b     ff    S      68888888888",
+            "88888888z0001TTTTTTTTT70000000000000000001  7000000000c8z000001TTTTTT7000001   E   7000000000000000000c8888888888",
+            "888888888888z000000000c888888888888888888z00c88888888888888888z000000c88888z0000000c88888888888888888888888888888",
+            "88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888"
+        ],
+        "gravedad": 1.5,
+        "enemy_weights": [50, 40],
+        "velocidad_mover_mapa": 4,
+        "player": {
+            "frame_rate": 75,
+            "velocidad_animacion": 0.25,
+            "vida": 400,
+            "disparo_cooldown": 300,
+            "speed": 6,
+            "altura_salto": 17,
+            "do_doble_salto": 0,
+            "fuerza": 20,
+            "fuerza_disparo": 10,
+            "vida_maxima": 400,
+            "len_barra_vida": 400,
+            "path": "./assets/graphics/player/",
+            "jump_sound": "./assets/sounds/jump_efect.mp3",
+            "shoot_sound": "./assets/sounds/Air_3.wav"
+
+        },
+        "enemy": {
+            "soul": {
+                "frame_rate": 200,
+                "velocidad_animacion": 0.25,
+                "velocidad_movimiento": 0.25,
+                "vidas": 100,
+                "disparo_cooldown": 3000,
+                "speed": 2,
+                "fuerza": 5,
+                "proyectil_size": 32,
+                "path": "./assets/graphics/enemy/soul/",
+                "fuerza_proyectil": 20,
+                "alive": 1,
+                "puntaje_por_gole": 30
+            },
+            "summon": {
+                "frame_rate": 200,
+                "velocidad_animacion": 0.25,
+                "velocidad_movimiento": 0.25,
+                "vidas": 50,
+                "disparo_cooldown": 3000,
+                "speed": 2,
+                "fuerza": 5,
+                "proyectil_size": 32,
+                "path": "./assets/graphics/enemy/summon/",
+                "fuerza_proyectil": 10,
+                "alive": 1,
+                "puntaje_por_gole": 10
+            }
+        },
+        "sobrecito": {
+            "frame_rate": 100,
+            "velocidad_animacion": 0.25,
+            "path": "assets/graphics/sobrecito/",
+            "recupera": 20
+        },
+        "fish_salto": {
+            "frame_rate": 100,
+            "velocidad_animacion": 0.25,
+            "path": "assets/graphics/fish_salto/"
+        },
+        "main_theme": "assets/sounds/nivel_1.mp3",
+        "desbloquea": 1
+
+
+    },
+    "nivel_2": {
+        "MAP": [
+            "88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888",
+            "88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888",
+            "88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888",
+            "88888888q4444444444444444444444e8888q44444444444444444444444444444444444444444444444444444444eq4444444e8888888888",
+            "888888882                      688882     b                                              b   62      fJLL88888888",
+            "888888882                   f  688882  E  b     f                                        b E 62      fJLL88888888",
+            "888888882        f             688882plllla                                              bpla62       6LL88888888",
+            "888888882plla                  688882                                  f                     62     t 6LL88888888",
+            "888888882                      544443                    T T T                               62       6LL88888888",
+            "888888882                 mov             t  plllla  t  plllllla             t  plllllla     53 t     6LL88888888",
+            "888888882             t                                            mov   t                            6LLLLLff888",
+            "888888882      P                      mov                                                          t  6LLLLLff888",
+            "888888882    plllla                                                                                   6LL88888888",
+            "888888882                                                                                       t     6LL88888888",
+            "888888882  t                                                                                          JLL88888888",
+            "888888882                     t   t                                                               t   JLL88888888",
+            "888888882                                   b                 b                   b                  b6LL88888888",
+            "888888882                                   b f  E   E   E    b                   b        E         b6LL88888888",
+            "88888888z1TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT7000000000000000001TTTTTTTTTTTTTTTTTTTT7000000000000000000cLL88888888",
+            "888888888z0000000000000000000000000000000000c88888888888888888z000000000HH000000000c88888888888888888888888888888",
+            "888888888888888888888888888888888888888888888888ffffffffffLLLLLLLLLLLLLLLL888888888888888888888888888888888888888",
+            "888888888888888888888888888888888888888888888888HHHHHHHHHHLLLLLLLLLLLLLLLL888888888888888888888888888888888888888",
+            "88888888888888888888888888888888888888888888888800000000008888888888888888888888888888888888888888888888888888888"
+        ],
+        "gravedad": 1.5,
+        "enemy_weights": [5, 10],
+        "velocidad_mover_mapa": 4,
+        "player": {
+            "frame_rate": 75,
+            "velocidad_animacion": 0.25,
+            "vida": 400,
+            "disparo_cooldown": 300,
+            "speed": 6,
+            "altura_salto": 17,
+            "do_doble_salto": 1,
+            "fuerza": 40,
+            "fuerza_disparo": 20,
+            "vida_maxima": 400,
+            "len_barra_vida": 400,
+            "path": "./assets/graphics/player/",
+            "jump_sound": "./assets/sounds/jump_efect.mp3",
+            "shoot_sound": "./assets/sounds/Air_3.wav"
+
+        },
+        "enemy": {
+            "soul": {
+                "frame_rate": 200,
+                "velocidad_animacion": 0.25,
+                "velocidad_movimiento": 0.25,
+                "vidas": 200,
+                "disparo_cooldown": 3000,
+                "speed": 2,
+                "fuerza": 5,
+                "proyectil_size": 32,
+                "path": "./assets/graphics/enemy/soul/",
+                "fuerza_proyectil": 30,
+                "alive": 1,
+                "puntaje_por_gole": 50
+            },
+            "summon": {
+                "frame_rate": 200,
+                "velocidad_animacion": 0.25,
+                "velocidad_movimiento": 0.25,
+                "vidas": 150,
+                "disparo_cooldown": 3000,
+                "speed": 2,
+                "fuerza": 5,
+                "proyectil_size": 32,
+                "path": "./assets/graphics/enemy/summon/",
+                "fuerza_proyectil": 15,
+                "alive": 1,
+                "puntaje_por_gole": 30
+            }
+        },
+        "sobrecito": {
+            "frame_rate": 100,
+            "velocidad_animacion": 0.25,
+            "path": "assets/graphics/sobrecito/",
+            "recupera": 20
+        },
+        "main_theme": "assets/sounds/nivel_1.mp3",
+        "desbloquea": 2
+    },
+    "nivel_3": {
+        "MAP": [
+            "88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888",
+            "88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888",
+            "88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888",
+            "88888888q444444e88q44444444444444444444444444444444444444444444444444eq4444444e8888888888",
+            "888888882      6882                                                  62   f   6LL88888888",
+            "888888882  f   6882                                                  62   f   6LL88888888",
+            "888888882      6882                                                  62       6LL88888888",
+            "888888882    t 6882      t       plllllllllllllllla                  62    t  6LL88888888",
+            "888888882      6882                                       t          62 t     6LL88888888",
+            "888888882 t    6882         t                                        62       6LL88888888",
+            "888888882      6882                      B                      t    62       6LLLLL88888",
+            "888888882      6882     t   t                               t        62    t  6LLLLL88888",
+            "888888882    t 6882         t                               t        62       6LL88888888",
+            "888888882      6882   t     t                               t   t    62       6LL88888888",
+            "888888882 t    6882  b      t                               t  b     62 t     6LL88888888",
+            "888888882      5443  b   t                                     b     53   ff  6LL88888888",
+            "888888882                                                                ffff 6LL88888888",
+            "888888882   P                                                           ffffff6LL88888888",
+            "88888888z000000000000000000000000000000000000000000000000000000000000000000000cLL88888888",
+            "88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888",
+            "88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888",
+            "88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888",
+            "88888888888888888888888800000000008888888888888888888888888888888888888888888888888888888"
+        ],
+        "gravedad": 1.5,
+        "enemy_weights": [5, 10],
+        "velocidad_mover_mapa": 4,
+        "player": {
+            "frame_rate": 75,
+            "velocidad_animacion": 0.25,
+            "vida": 400,
+            "disparo_cooldown": 300,
+            "speed": 6,
+            "altura_salto": 17,
+            "do_doble_salto": 1,
+            "fuerza": 40,
+            "fuerza_disparo": 60,
+            "vida_maxima": 400,
+            "len_barra_vida": 400,
+            "path": "./assets/graphics/player/",
+            "jump_sound": "./assets/sounds/jump_efect.mp3",
+            "shoot_sound": "./assets/sounds/Air_3.wav"
+
+        },
+        "enemy": {
+            "soul": {
+                "frame_rate": 200,
+                "velocidad_animacion": 0.25,
+                "velocidad_movimiento": 0.25,
+                "vidas": 100,
+                "disparo_cooldown": 3000,
+                "speed": 2,
+                "fuerza": 5,
+                "proyectil_size": 32,
+                "path": "./assets/graphics/enemy/soul/",
+                "fuerza_proyectil": 3,
+                "alive": 1,
+                "puntaje_por_gole": 0
+            },
+            "summon": {
+                "frame_rate": 200,
+                "velocidad_animacion": 0.25,
+                "velocidad_movimiento": 0.25,
+                "vidas": 50,
+                "disparo_cooldown": 3000,
+                "speed": 2,
+                "fuerza": 5,
+                "proyectil_size": 32,
+                "path": "./assets/graphics/enemy/summon/",
+                "fuerza_proyectil": 3,
+                "alive": 1,
+                "puntaje_por_gole": 0
+            }
+        },
+        "boss": {
+            "frame_rate": 300,
+            "velocidad_animacion": 1,
+            "velocidad_movimiento": 0.25,
+            "vidas": 500,
+            "disparo_cooldown": 1000,
+            "speed": 2,
+            "fuerza": 50,
+            "proyectil_size": 128,
+            "path": "./assets/graphics/enemy/mecha-boss/",
+            "fuerza_proyectil": 100,
+            "alive": 1,
+            "puntaje_por_gole": 200
+        },
+        "sobrecito": {
+            "frame_rate": 100,
+            "velocidad_animacion": 0.25,
+            "path": "assets/graphics/sobrecito/",
+            "recupera": 20
+        },
+        "main_theme": "assets/sounds/nivel_1.mp3",
+        "desbloquea": 2
+    }
+}
