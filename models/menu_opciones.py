@@ -12,6 +12,7 @@ class Opciones():
         self.__boton_audio = Boton(self.__pantalla,open_configs().get('ui_settings'),((ANCHO/2),(ALTO/2) - 90),'AUDIO',None,'white',0.5)
         self.__boton_teclas = Boton(self.__pantalla,open_configs().get('ui_settings'),((ANCHO/2),(ALTO/2) - 10),'TECLAS',None,'white',0.5)
         self.__boton_volver = Boton(self.__pantalla,open_configs().get('ui_settings'),((ANCHO/2),(ALTO/2) + 70),'VOLVER',None,'white',0.5)
+        self.__boton_volver_score = Boton(self.__pantalla,open_configs().get('ui_settings'),((ANCHO - 150),(ALTO - 60)),'VOLVER',None,'white',0.5)
         self.__clicked = click
         self.__texto = ''
         self.__scores = ''
@@ -69,10 +70,31 @@ class Opciones():
         self.__ui.dibujar_texto(self.__texto,20,self.__pantalla.get_rect().center,'white')
     
 
-    def mostar_higscore(self):
+    def mostar_higscore(self,volver_estado,menu_anterior):
+        for evento in pg.event.get():
+            if evento.type == pg.QUIT:
+                pg.quit()
+                sys.exit()
+            if evento.type == pg.MOUSEBUTTONUP:
+                    self.__clicked = False
+
         self.__ui.dibujar_texto('Higscore',50,((ANCHO/2),(ALTO/2) - 300),'white')
 
         
-        self.__ui.dubijar_texto_doble_linea('NOMBRE | HIGSCORE',((ANCHO/2),(ALTO/2)),30,'white')
-        lista_higscores = select_delete_en_base_de_datos('SELECT id, nombre, puntos_primer_nivel+puntos_segundo_nivel+puntos_tercer_nivel AS suma','FROM scores ORDER BY suma')
-        print(lista_higscores)
+        self.__ui.dubijar_texto_doble_linea('NOMBRE | HIGSCORE',(((ANCHO/2) - 250),(ALTO/2) - 220),30,'white')
+        higscores = select_delete_en_base_de_datos('SELECT id, nombre, puntos_primer_nivel+puntos_segundo_nivel+puntos_tercer_nivel AS suma','FROM scores ORDER BY suma Desc')
+        nombres = ''
+        score = ''
+        for lista_higscore in higscores:
+            if lista_higscore[0] != 0:
+                nombres += f'{lista_higscore[1][0:5]}\n'
+                score += f'{lista_higscore[2]}\n'
+        
+        self.__ui.dubijar_texto_doble_linea(nombres,(((ANCHO/2) - 230),(ALTO/2) - 185),30,'white')
+        self.__ui.dubijar_texto_doble_linea(score,(((ANCHO/2)+ 50),(ALTO/2) - 185),30,'white')
+
+        if self.__boton_volver_score.draw(self.__pantalla) and not self.__clicked:
+            match menu_anterior:
+                case 'seleccion':
+                    volver_estado('seleccion')
+            self.__clicked = True

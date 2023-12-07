@@ -102,7 +102,6 @@ def select_delete_en_base_de_datos(statement: str,tabla: str,condicion = '1=1'):
         try:
             sentencia = f'{statement} {tabla}'
             cursor  = conexion.execute(sentencia)
-            print(sentencia)
             conexion.commit()
             rows = cursor.fetchall()
             return rows

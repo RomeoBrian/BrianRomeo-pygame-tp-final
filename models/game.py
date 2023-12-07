@@ -9,7 +9,7 @@ from models.menu_opciones import Opciones
 class Game:
     
     def __init__(self) -> None:
-        self.__nivel_maximo_alcanzado = 0
+        self.__nivel_maximo_alcanzado = 2
         self.__config = open_configs()
         self.__niveles = open_configs().get('level_manager_settings')
         self.__estado = 'seleccion'
@@ -40,6 +40,7 @@ class Game:
         self.__boton_resume = Boton(self.screen,self.__config.get('ui_settings'),((ANCHO/2),(ALTO/2) - 90),'SALIR PAUSA',None,'white',0.5)
         self.__boton_opciones = Boton(self.screen,self.__config.get('ui_settings'),((ANCHO/2),(ALTO/2) - 10),'OPCIONES',None,'white',0.5)
         self.__boton_volver = Boton(self.screen,self.__config.get('ui_settings'),((ANCHO/2),(ALTO/2) + 70),'VOLVER AL MENU',None,'white',0.5)
+        self.__boton_score = Boton(self.screen,self.__config.get('ui_settings'),((ANCHO - 150),(ALTO - 60)),'MOSTRAR SCORE',None,'white',0.5)
 
         #tiempo de juego
         self.__time_level_start = pg.time.get_ticks()
@@ -106,7 +107,12 @@ class Game:
             if self.__estado == 'seleccion':
                 self.__ui.dibujar_texto('SELECCION DE NIVEL',50,((ANCHO/2),(ALTO/2) - 300),'white')
                 self.__nivel_select.run()
-            else:
+                if self.__boton_score.draw(self.screen) and not self.__cliked:
+                            self.__estado = 'score'
+                            self.__cliked = True
+            if self.__estado == 'score':
+                self.__opciones.mostar_higscore(self.vovler_estado,'seleccion')
+            elif self.__estado == 'nivel':
                 self.__nivel.run(delta_ms,self.__game_pausa,touch_space,minutos)
                 self.__ui.mostar_vida(self.__nivel.player.sprite.vidas,self.__nivel.player.sprite.vida_maxima)
                 self.__ui.mostrar_fish(self.__nivel.sobrecito_coin)
